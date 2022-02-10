@@ -1,58 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.1/css/bootstrap.min.css" integrity="sha512-T584yQ/tdRR5QwOpfvDfVQUidzfgc2339Lc8uBDtcp/wYu80d7jwBgAxbyMh0a9YM9F8N3tdErpFI8iaGx6x5g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <style>
-        body{
-    margin-top:20px;
-    background: #f6f9fc;
-}
-.account-block {
-    padding: 0;
-    background-image: url(https://bootdey.com/img/Content/bg1.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 100%;
-    position: relative;
-}
-.account-block .overlay {
-    -webkit-box-flex: 1;
-    -ms-flex: 1;
-    flex: 1;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: rgba(0, 0, 0, 0.4);
-}
-.account-block .account-testimonial {
-    text-align: center;
-    color: #fff;
-    position: absolute;
-    margin: 0 auto;
-    padding: 0 1.75rem;
-    bottom: 20vh;
-    left: 0;
-    right: 0;
-}
 
-.text-theme {
-    color: #5369f8 !important;
-}
-
-.btn-theme {
-    background-color: #5369f8;
-    border-color: #5369f8;
-    color: #fff;
-}
-    </style>
-</head>
-<body>
+{% extends "base.html" %}
+{% block main %}
     <div id="main-wrapper" class="container">
         <div class="row justify-content-center">
             <div class="col-xl-10">
@@ -70,8 +18,8 @@
     
                                     <form>
                                         <div class="form-group">
-                                            <label for="exampleInputEmail1">Email address</label>
-                                            <input type="email" class="form-control" id="exampleInputEmail1">
+                                            <label for="exampleInputEmail1">Username</label>
+                                            <input type="text" class="form-control" id="username">
                                         </div>
                                         <div class="form-group mb-5">
                                             <label for="exampleInputPassword1">Password</label>
@@ -87,9 +35,9 @@
                                 <div class="account-block rounded-right">
                                     <div class="overlay rounded-right"></div>
                                     <div class="account-testimonial">
-                                        <h4 class="text-white mb-4">This  beautiful theme yours!</h4>
-                                        <p class="lead text-white">"Best investment i made for a long time. Can only recommend it for other users."</p>
-                                        <p>- Admin User</p>
+                                        <h4 class="text-white mb-4">Let's be better humans!</h4>
+                                        <p class="lead text-white">"Crime against the individual is the equivalent of crime against humanity."</p>
+                                        <p>-Mahmoud Ahmadinejad</p>
                                     </div>
                                 </div>
                             </div>
@@ -110,4 +58,4 @@
         <!-- Row -->
     </div>
 </body>
-</html>
+{% endblock %}
