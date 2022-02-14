@@ -1,0 +1,52 @@
+body{
+    font-family: 'Inter', sans-serif;
+ .menu-bar{
+            background-color: #f8f9fa;
+            
+    nav{
+        margin: auto 20px;
+        .logo{
+            width: 20%;
+            
+        }
+        .navbar-brand{
+            font-family: Inter;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 20px;
+            line-height: 24px;
+
+            color: #0D062D;
+        }
+
+        .nav-bar-right{
+            
+            .profile{
+                text-decoration: none;
+                .row{
+                    align-items: center;
+                }
+                img{
+                    max-height: 50px;
+                    width: auto;
+                }
+                .column{
+                    margin-left: 10px;
+                }
+                .name{
+                    font-size: 16px;
+                    color: #0D062D;
+                }
+                .profession{
+                    color: #787486;
+                    font-size: 14px;
+                    line-height: 17px;
+                    /* identical to box height */
+                    
+                    text-align: right;
+                }
+            }
+        }
+    }
+}
+}

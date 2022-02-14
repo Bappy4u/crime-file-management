@@ -1,0 +1,57 @@
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+body .menu-bar {
+  background-color: #f8f9fa;
+}
+
+body .menu-bar nav {
+  margin: auto 20px;
+}
+
+body .menu-bar nav .logo {
+  width: 20%;
+}
+
+body .menu-bar nav .navbar-brand {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+  color: #0D062D;
+}
+
+body .menu-bar nav .nav-bar-right .profile {
+  text-decoration: none;
+}
+
+body .menu-bar nav .nav-bar-right .profile .row {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body .menu-bar nav .nav-bar-right .profile img {
+  max-height: 50px;
+  width: auto;
+}
+
+body .menu-bar nav .nav-bar-right .profile .column {
+  margin-left: 10px;
+}
+
+body .menu-bar nav .nav-bar-right .profile .name {
+  font-size: 16px;
+  color: #0D062D;
+}
+
+body .menu-bar nav .nav-bar-right .profile .profession {
+  color: #787486;
+  font-size: 14px;
+  line-height: 17px;
+  /* identical to box height */
+  text-align: right;
+}
+/*# sourceMappingURL=base.css.map */
