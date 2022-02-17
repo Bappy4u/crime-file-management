@@ -124,10 +124,10 @@
 
       <!-- Page Content  -->
       <div id="content">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+        <nav class="navbar navbar-expand-lg navbar-light sticky-top">
           <div class="container-fluid">
-            <button type="button" id="sidebarCollapse" class="btn btn-info">
-              <i class="bx bx-align-left"></i>
+            <button type="button" id="sidebarCollapse" class="btn btn-light">
+              <i id="menu-collapse-button" class="bx bx-x"></i>
               <span></span>
             </button>
             <button
@@ -141,7 +141,22 @@
             >
               <i class="fas fa-align-justify"></i>
             </button>
-
+            <div class="input-group top-search-form">
+              <div class="input-group-prepend">
+                <button class="btn btn-outline-light" type="button">
+                  <i class="bx bx-search" style="color: gray"></i>
+                </button>
+              </div>
+              <form action="post">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Search Anything..."
+                  aria-label=""
+                  aria-describedby="basic-addon1"
+                />
+              </form>
+            </div>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="nav navbar-nav ml-auto">
                 <li class="nav-item">
@@ -153,21 +168,36 @@
                   <a class="nav-link" href="#"><i class="bx bx-bell"></i></a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#"
+                  <a class="nav-link"
                     ><p class="name">Najmul H. Bappy</p>
                     <p class="profession">Student</p></a
                   >
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#"
-                    ><img src="files/profile-pic.png" alt=""
-                  /></a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#"
-                    ><i class="bx bx-chevron-down"></i
-                  ></a>
-                </li>
+                <div class="dropdown nav-link">
+                  <a
+                    class="row top-profile-btn"
+                    type="button"
+                    id="dropdownMenuButton"
+                    data-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                  >
+                    <div class="col-md-4">
+                      <img src="files/profile-pic.png" alt="" />
+                    </div>
+                    <div class="col-md-2">
+                      <i class="bx bx-chevron-down"></i>
+                    </div>
+                  </a>
+                  <div
+                    class="dropdown-menu"
+                    aria-labelledby="dropdownMenuButton"
+                  >
+                    <a class="dropdown-item" href="#">Profile</a>
+                    <a class="dropdown-item" href="#">Edit Profile</a>
+                    <a class="dropdown-item" href="#">Logout</a>
+                  </div>
+                </div>
               </ul>
             </div>
           </div>
