@@ -5,22 +5,231 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home page | Crime File Management System</title>
+    <script src="/files/base.js"></script>
+    <link
+      href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css"
+      rel="stylesheet"
+    />
 
-    <title>Document</title>
     <link
       rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
+      integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
       crossorigin="anonymous"
     />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
     />
+    <link rel="stylesheet" href="{% static 'base.css'%}" />
     {% block css %} {% endblock %}
-    <link rel="stylesheet" href="{% static 'style.css' %}" />
   </head>
   <body>
-    {% block main %} {% endblock %}
+    <div class="wrapper">
+      <!-- Sidebar  -->
+      <nav id="sidebar">
+        <div class="sidebar-header">
+          <h3>
+            <img class="logo" src="{% static 'files/logo.png' %}" alt="" /> CFMS
+          </h3>
+        </div>
+
+        <ul class="list-unstyled components">
+          <li class="active">
+            <a href="#"><i class="bx bx-grid-alt"></i> Home</a>
+          </li>
+          <li>
+            <a href="#"><i class="bx bx-user-voice"></i> Announcement</a>
+          </li>
+          <li>
+            <a href="#"><i class="bx bx-search"></i> Wanted Person</a>
+          </li>
+          <li>
+            <a href="#"><i class="bx bx-wrench"></i> Settings</a>
+          </li>
+          <!-- Dropdown menu 
+          <li>
+            <a
+              href="#pageSubmenu"
+              data-toggle="collapse"
+              aria-expanded="false"
+              class="dropdown-toggle"
+              >Pages</a
+            >
+            <ul class="collapse list-unstyled" id="pageSubmenu">
+              <li>
+                <a href="#">Page 1</a>
+              </li>
+              <li>
+                <a href="#">Page 2</a>
+              </li>
+              <li>
+                <a href="#">Page 3</a>
+              </li>
+            </ul>
+          </li>
+          -->
+        </ul>
+        <ul class="list-unstyled sidebar-second-part">
+          <li>
+            <a href="#"
+              ><i class="crime-history bx bxs-circle"></i> Crime File History</a
+            >
+          </li>
+          <li>
+            <a href="#"
+              ><i class="crime-report bx bxs-circle"></i> Report A File</a
+            >
+          </li>
+          <li>
+            <a href="#"><i class="crime-forum bx bxs-circle"></i> Forum</a>
+          </li>
+          <li>
+            <a href="#"><i class="crime-logout bx bxs-circle"></i> Logout</a>
+          </li>
+        </ul>
+        <ul class="list-unstyled CTAs">
+          <li>
+            <i class="bx bxs-bulb"></i>
+          </li>
+          <li>
+            <p class="title"><strong>Thoughts Time</strong></p>
+          </li>
+          <li class="text">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+            </p>
+          </li>
+          <li>
+            <a href="">Write us a message</a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Page Content  -->
+      <div id="content">
+        <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+          <div class="container-fluid">
+            <button type="button" id="sidebarCollapse" class="btn btn-light">
+              <i id="menu-collapse-button" class="bx bx-x"></i>
+              <span></span>
+            </button>
+            <button
+              class="btn btn-dark d-inline-block d-lg-none ml-auto"
+              type="button"
+              data-toggle="collapse"
+              data-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <i class="fas fa-align-justify"></i>
+            </button>
+            <div class="input-group top-search-form">
+              <div class="input-group-prepend">
+                <button class="btn btn-outline-light" type="button">
+                  <i class="bx bx-search" style="color: gray"></i>
+                </button>
+              </div>
+              <form action="post">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Search Anything..."
+                  aria-label=""
+                  aria-describedby="basic-addon1"
+                />
+              </form>
+            </div>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="nav navbar-nav ml-auto">
+                <li class="nav-item">
+                  <a class="nav-link" href="#"
+                    ><i class="bx bx-help-circle"></i
+                  ></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#"><i class="bx bx-bell"></i></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link"
+                    ><p class="name">Najmul H. Bappy</p>
+                    <p class="profession">Student</p></a
+                  >
+                </li>
+                <div class="dropdown nav-link">
+                  <a
+                    class="row top-profile-btn"
+                    type="button"
+                    id="dropdownMenuButton"
+                    data-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                  >
+                    <div class="col-md-4">
+                      <img src="{% static 'files/profile-pic.png' %}" alt="" />
+                    </div>
+                    <div class="col-md-2">
+                      <i class="bx bx-chevron-down"></i>
+                    </div>
+                  </a>
+                  <div
+                    class="dropdown-menu"
+                    aria-labelledby="dropdownMenuButton"
+                  >
+                    <a class="dropdown-item" href="#">Profile</a>
+                    <a class="dropdown-item" href="#">Edit Profile</a>
+                    <a class="dropdown-item" href="#">Logout</a>
+                  </div>
+                </div>
+              </ul>
+            </div>
+          </div>
+        </nav>
+        <div class="main-body">
+          <div class="body-content">{% block main %} {% endblock %}</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- jQuery CDN - Slim version (=without AJAX) -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Popper.JS -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
+      integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Bootstrap JS -->
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
+      integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+      crossorigin="anonymous"
+    ></script>
+    <script src="{% static 'files/base.js' %}"></script>
   </body>
 </html>
