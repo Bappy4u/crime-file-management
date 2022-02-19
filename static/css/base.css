@@ -60,7 +60,7 @@ a:focus {
 .nav-link .name {
   margin: 0;
   margin-left: 18px;
-  font-size: 18px;
+  font-size: 16px;
   text-align: right;
   color: #0d062d;
 }
@@ -69,6 +69,7 @@ a:focus {
   line-height: 1;
   text-align: right;
   font-size: 14px;
+  color: #787486;
 }
 .navbar-btn {
   box-shadow: none;
@@ -93,6 +94,8 @@ a.top-profile-btn {
 }
 a.top-profile-btn img {
   max-width: 50px;
+  border-radius: 50%;
+  border: 1px solid rebeccapurple;
 }
 .top-search-form {
   max-width: 500px;

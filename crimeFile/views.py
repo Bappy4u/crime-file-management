@@ -1,8 +1,17 @@
 from django.http import HttpResponse
 from django.shortcuts import redirect, render
+from .models import Complain
 
 def FileHistoryView(request):
     if request.user.is_authenticated:
-        return render(request, "file-history.html")
+        complain_list_on_pending = Complain.objects.filter(user=request.user, status='pending')
+        complain_list_on_investigation = Complain.objects.filter(user=request.user, status='investigating')
+        complain_list_on_dismissed = Complain.objects.filter(user=request.user, status='dismissed')
+        context = {
+            'pending_complain_list': complain_list_on_pending,
+            'investigating_complain_list': complain_list_on_investigation,
+            'dismissed_complain_list': complain_list_on_dismissed,
+        }
+        return render(request, "file-history.html", context)
     return redirect('/login')
 

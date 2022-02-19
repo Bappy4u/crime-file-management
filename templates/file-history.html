@@ -20,67 +20,46 @@
         <p class="title">
           <i class="crime-history bx bxs-circle"></i> Investigating
           <span class="bg-secondary ml-2 px-1 rounded-circle text-white"
-            >4</span
+            >{{ investigating_complain_list.count }}</span
           >
         </p>
         <div class="s-line"></div>
 
-        <div class="content file-cart bg-white py-3 px-3 rounded">
-          <a href="">
-            <div class="status">
-              <p class="d-inline px-2 py-1 rounded">Investigating</p>
-            </div>
-            <div class="title py-2">
-              <h6>Attacked by neighbour</h6>
-            </div>
-            <div class="file-cart-desc">
-              <p>
-                I was attacked by a neighbour. He is really aggressive towards
-                me regards a simple issue....
-              </p>
-            </div>
-            <div class="file-cart-option row">
-              <div class="col-md-5 row">
-                <div class="col">
-                  <img src="{% static 'files/profile-pic.png' %}" alt="" />
-                  <img src="{% static 'files/profile-pic.png' %}" alt="" />
+        {% if investigating_complain_list %}
+        <div class="hello">
+          {% for complain in investigating_complain_list %}
+          <div class="content file-cart bg-white py-3 px-3 rounded">
+            <a href="">
+              <div class="status">
+                <p class="d-inline px-2 py-1 rounded">
+                  {{ complain.status|capfirst }}
+                </p>
+              </div>
+              <div class="title py-2">
+                <h6>{{ complain.title|capfirst | slice:":25" }}..</h6>
+              </div>
+              <div class="file-cart-desc">
+                <p>{{ complain.description | slice:":200" }}..</p>
+              </div>
+              <div class="file-cart-option row">
+                <div class="col-md-5 row">
+                  <div class="col">
+                    <img src="{% static 'files/profile-pic.png' %}" alt="" />
+                    <img src="{% static 'files/profile-pic.png' %}" alt="" />
+                  </div>
                 </div>
-              </div>
-              <div class="col-md-5 text-right">
-                <i class="bx bx-comment-dots"></i>12 Comments
-              </div>
-              <div class="col"><i class="bx bx-file"></i>0 files</div>
-            </div>
-          </a>
-        </div>
-        <div class="content file-cart bg-white py-3 px-3 rounded">
-          <a href="">
-            <div class="status">
-              <p class="d-inline px-2 py-1 rounded">Investigating</p>
-            </div>
-            <div class="title py-2">
-              <h6>Attacked by neighbour</h6>
-            </div>
-            <div class="file-cart-desc">
-              <p>
-                I was attacked by a neighbour. He is really aggressive towards
-                me regards a simple issue....
-              </p>
-            </div>
-            <div class="file-cart-option row">
-              <div class="col-md-5 row">
-                <div class="col">
-                  <img src="{% static 'files/profile-pic.png' %}" alt="" />
-                  <img src="{% static 'files/profile-pic.png' %}" alt="" />
+                <div class="col-md-5 text-right">
+                  <i class="bx bx-comment-dots"></i>12 Comments
                 </div>
+                <div class="col"><i class="bx bx-file"></i>0 files</div>
               </div>
-              <div class="col-md-5 text-right">
-                <i class="bx bx-comment-dots"></i>12 Comments
-              </div>
-              <div class="col"><i class="bx bx-file"></i>0 files</div>
-            </div>
-          </a>
+            </a>
+          </div>
+          {% endfor %}
         </div>
+        {% else %}
+        <p>No files on investigation.</p>
+        {% endif %}
       </div>
     </div>
     <div class="col pending-col">
@@ -88,67 +67,45 @@
         <p class="title">
           <i class="crime-history bx bxs-circle"></i> On Pending
           <span class="bg-secondary ml-2 px-1 rounded-circle text-white"
-            >4</span
+            >{{ pending_complain_list.count }}</span
           >
         </p>
         <div class="s-line"></div>
-
-        <div class="content file-cart bg-white py-3 px-3 rounded">
-          <a href="">
-            <div class="status">
-              <p class="d-inline px-2 py-1 rounded">Investigating</p>
-            </div>
-            <div class="title py-2">
-              <h6>Attacked by neighbour</h6>
-            </div>
-            <div class="file-cart-desc">
-              <p>
-                I was attacked by a neighbour. He is really aggressive towards
-                me regards a simple issue....
-              </p>
-            </div>
-            <div class="file-cart-option row">
-              <div class="col-md-5 row">
-                <div class="col">
-                  <img src="{% static 'files/profile-pic.png' %}" alt="" />
-                  <img src="{% static 'files/profile-pic.png' %}" alt="" />
+        {% if pending_complain_list %}
+        <div class="hello">
+          {% for complain in pending_complain_list %}
+          <div class="content file-cart bg-white py-3 px-3 rounded">
+            <a href="">
+              <div class="status">
+                <p class="d-inline px-2 py-1 rounded">
+                  {{ complain.status|capfirst }}
+                </p>
+              </div>
+              <div class="title py-2">
+                <h6>{{ complain.title|capfirst | slice:":25" }}..</h6>
+              </div>
+              <div class="file-cart-desc">
+                <p>{{ complain.description | slice:":200" }}..</p>
+              </div>
+              <div class="file-cart-option row">
+                <div class="col-md-5 row">
+                  <div class="col">
+                    <img src="{% static 'files/profile-pic.png' %}" alt="" />
+                    <img src="{% static 'files/profile-pic.png' %}" alt="" />
+                  </div>
                 </div>
-              </div>
-              <div class="col-md-5 text-right">
-                <i class="bx bx-comment-dots"></i>12 Comments
-              </div>
-              <div class="col"><i class="bx bx-file"></i>0 files</div>
-            </div>
-          </a>
-        </div>
-        <div class="content file-cart bg-white py-3 px-3 rounded">
-          <a href="">
-            <div class="status">
-              <p class="d-inline px-2 py-1 rounded">Investigating</p>
-            </div>
-            <div class="title py-2">
-              <h6>Attacked by neighbour</h6>
-            </div>
-            <div class="file-cart-desc">
-              <p>
-                I was attacked by a neighbour. He is really aggressive towards
-                me regards a simple issue....
-              </p>
-            </div>
-            <div class="file-cart-option row">
-              <div class="col-md-5 row">
-                <div class="col">
-                  <img src="{% static 'files/profile-pic.png' %}" alt="" />
-                  <img src="{% static 'files/profile-pic.png' %}" alt="" />
+                <div class="col-md-5 text-right">
+                  <i class="bx bx-comment-dots"></i>12 Comments
                 </div>
+                <div class="col"><i class="bx bx-file"></i>0 files</div>
               </div>
-              <div class="col-md-5 text-right">
-                <i class="bx bx-comment-dots"></i>12 Comments
-              </div>
-              <div class="col"><i class="bx bx-file"></i>0 files</div>
-            </div>
-          </a>
+            </a>
+          </div>
+          {% endfor %}
         </div>
+        {% else %}
+        <p>No files on pending.</p>
+        {% endif %}
       </div>
     </div>
     <div class="dismissed-col col">
@@ -156,67 +113,45 @@
         <p class="title">
           <i class="crime-history bx bxs-circle"></i> Dismissed
           <span class="bg-secondary ml-2 px-1 rounded-circle text-white"
-            >4</span
+            >{{ dismissed_complain_list.count }}</span
           >
         </p>
         <div class="s-line"></div>
-
-        <div class="content file-cart bg-white py-3 px-3 rounded">
-          <a href="">
-            <div class="status">
-              <p class="d-inline px-2 py-1 rounded">Investigating</p>
-            </div>
-            <div class="title py-2">
-              <h6>Attacked by neighbour</h6>
-            </div>
-            <div class="file-cart-desc">
-              <p>
-                I was attacked by a neighbour. He is really aggressive towards
-                me regards a simple issue....
-              </p>
-            </div>
-            <div class="file-cart-option row">
-              <div class="col-md-5 row">
-                <div class="col">
-                  <img src="{% static 'files/profile-pic.png' %}" alt="" />
-                  <img src="{% static 'files/profile-pic.png' %}" alt="" />
+        {% if dismissed_complain_list %}
+        <div class="hello">
+          {% for complain in dismissed_complain_list %}
+          <div class="content file-cart bg-white py-3 px-3 rounded">
+            <a href="">
+              <div class="status">
+                <p class="d-inline px-2 py-1 rounded">
+                  {{ complain.status|capfirst }}
+                </p>
+              </div>
+              <div class="title py-2">
+                <h6>{{ complain.title|capfirst | slice:":25" }}..</h6>
+              </div>
+              <div class="file-cart-desc">
+                <p>{{ complain.description | slice:":200" }}..</p>
+              </div>
+              <div class="file-cart-option row">
+                <div class="col-md-5 row">
+                  <div class="col">
+                    <img src="{% static 'files/profile-pic.png' %}" alt="" />
+                    <img src="{% static 'files/profile-pic.png' %}" alt="" />
+                  </div>
                 </div>
-              </div>
-              <div class="col-md-5 text-right">
-                <i class="bx bx-comment-dots"></i>12 Comments
-              </div>
-              <div class="col"><i class="bx bx-file"></i>0 files</div>
-            </div>
-          </a>
-        </div>
-        <div class="content file-cart bg-white py-3 px-3 rounded">
-          <a href="">
-            <div class="status">
-              <p class="d-inline px-2 py-1 rounded">Investigating</p>
-            </div>
-            <div class="title py-2">
-              <h6>Attacked by neighbour</h6>
-            </div>
-            <div class="file-cart-desc">
-              <p>
-                I was attacked by a neighbour. He is really aggressive towards
-                me regards a simple issue....
-              </p>
-            </div>
-            <div class="file-cart-option row">
-              <div class="col-md-5 row">
-                <div class="col">
-                  <img src="{% static 'files/profile-pic.png' %}" alt="" />
-                  <img src="{% static 'files/profile-pic.png' %}" alt="" />
+                <div class="col-md-5 text-right">
+                  <i class="bx bx-comment-dots"></i>12 Comments
                 </div>
+                <div class="col"><i class="bx bx-file"></i>0 files</div>
               </div>
-              <div class="col-md-5 text-right">
-                <i class="bx bx-comment-dots"></i>12 Comments
-              </div>
-              <div class="col"><i class="bx bx-file"></i>0 files</div>
-            </div>
-          </a>
+            </a>
+          </div>
+          {% endfor %}
         </div>
+        {% else %}
+        <p>No files dismissed yet.</p>
+        {% endif %}
       </div>
     </div>
   </div>
