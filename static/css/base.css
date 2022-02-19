@@ -31,7 +31,7 @@ a:focus {
   background: #fff;
   border: none;
   border-radius: 0;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
 }
 .navbar-nav {
@@ -41,6 +41,18 @@ a:focus {
   font-size: 25px;
   margin: 5px;
   padding: 5px;
+}
+.before-dot {
+  position: relative;
+}
+.before-dot::before {
+  content: "•";
+  color: #d8727d;
+  text-shadow: #d8727d 0 0 2px;
+  position: absolute;
+  font-size: 18px;
+  top: 10px;
+  right: 18px;
 }
 .top-profile-btn {
   cursor: pointer;
@@ -89,10 +101,12 @@ a.top-profile-btn img {
 .top-search-form input {
   border: none;
   background-color: #f5f5f5;
-  font-size: 20px;
+  font-size: 14px;
+  color: #787486;
+  padding: 10px 5px;
 }
 .top-search-form button {
-  font-size: 20px;
+  font-size: 16px;
   background-color: #f5f5f5;
   cursor: default !important;
   border: none;
@@ -263,10 +277,10 @@ a.article:hover {
 }
 
 .main-body .body-content {
-  padding: 40px;
+  padding: 20px 40px;
 }
 .main-body .body-content .page-title h2 {
-  font-size: 46px;
+  font-size: 2em;
   font-weight: 500;
 }
 .main-body .body-content .border-box {

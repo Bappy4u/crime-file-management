@@ -1,4 +1,6 @@
-{% extends "base.html" %} {% block main %}
+{% extends "base.html" %} {% block main %} {% load static %} {% block css %}
+<link rel="stylesheet" href="{% static 'css/file-history/style.css' %}" />
+{% endblock %}
 <div class="page-title">
   <h2>File History</h2>
 </div>
@@ -11,4 +13,213 @@
     <p class="border-box filter">2022 <i class="bx bx-chevron-down"></i></p>
   </div>
 </div>
+<div class="crime-file-block">
+  <div class="row gx-5">
+    <div class="col">
+      <div class="p-4 file-column mt-4 rounded bx-shad">
+        <p class="title">
+          <i class="crime-history bx bxs-circle"></i> Investigating
+          <span class="bg-secondary ml-2 px-1 rounded-circle text-white"
+            >4</span
+          >
+        </p>
+        <div class="s-line"></div>
+
+        <div class="content file-cart bg-white py-3 px-3 rounded">
+          <a href="">
+            <div class="status">
+              <p class="d-inline px-2 py-1 rounded">Investigating</p>
+            </div>
+            <div class="title py-2">
+              <h6>Attacked by neighbour</h6>
+            </div>
+            <div class="file-cart-desc">
+              <p>
+                I was attacked by a neighbour. He is really aggressive towards
+                me regards a simple issue....
+              </p>
+            </div>
+            <div class="file-cart-option row">
+              <div class="col-md-5 row">
+                <div class="col">
+                  <img src="{% static 'files/profile-pic.png' %}" alt="" />
+                  <img src="{% static 'files/profile-pic.png' %}" alt="" />
+                </div>
+              </div>
+              <div class="col-md-5 text-right">
+                <i class="bx bx-comment-dots"></i>12 Comments
+              </div>
+              <div class="col"><i class="bx bx-file"></i>0 files</div>
+            </div>
+          </a>
+        </div>
+        <div class="content file-cart bg-white py-3 px-3 rounded">
+          <a href="">
+            <div class="status">
+              <p class="d-inline px-2 py-1 rounded">Investigating</p>
+            </div>
+            <div class="title py-2">
+              <h6>Attacked by neighbour</h6>
+            </div>
+            <div class="file-cart-desc">
+              <p>
+                I was attacked by a neighbour. He is really aggressive towards
+                me regards a simple issue....
+              </p>
+            </div>
+            <div class="file-cart-option row">
+              <div class="col-md-5 row">
+                <div class="col">
+                  <img src="{% static 'files/profile-pic.png' %}" alt="" />
+                  <img src="{% static 'files/profile-pic.png' %}" alt="" />
+                </div>
+              </div>
+              <div class="col-md-5 text-right">
+                <i class="bx bx-comment-dots"></i>12 Comments
+              </div>
+              <div class="col"><i class="bx bx-file"></i>0 files</div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="col pending-col">
+      <div class="p-4 file-column mt-4 rounded bx-shad">
+        <p class="title">
+          <i class="crime-history bx bxs-circle"></i> On Pending
+          <span class="bg-secondary ml-2 px-1 rounded-circle text-white"
+            >4</span
+          >
+        </p>
+        <div class="s-line"></div>
+
+        <div class="content file-cart bg-white py-3 px-3 rounded">
+          <a href="">
+            <div class="status">
+              <p class="d-inline px-2 py-1 rounded">Investigating</p>
+            </div>
+            <div class="title py-2">
+              <h6>Attacked by neighbour</h6>
+            </div>
+            <div class="file-cart-desc">
+              <p>
+                I was attacked by a neighbour. He is really aggressive towards
+                me regards a simple issue....
+              </p>
+            </div>
+            <div class="file-cart-option row">
+              <div class="col-md-5 row">
+                <div class="col">
+                  <img src="{% static 'files/profile-pic.png' %}" alt="" />
+                  <img src="{% static 'files/profile-pic.png' %}" alt="" />
+                </div>
+              </div>
+              <div class="col-md-5 text-right">
+                <i class="bx bx-comment-dots"></i>12 Comments
+              </div>
+              <div class="col"><i class="bx bx-file"></i>0 files</div>
+            </div>
+          </a>
+        </div>
+        <div class="content file-cart bg-white py-3 px-3 rounded">
+          <a href="">
+            <div class="status">
+              <p class="d-inline px-2 py-1 rounded">Investigating</p>
+            </div>
+            <div class="title py-2">
+              <h6>Attacked by neighbour</h6>
+            </div>
+            <div class="file-cart-desc">
+              <p>
+                I was attacked by a neighbour. He is really aggressive towards
+                me regards a simple issue....
+              </p>
+            </div>
+            <div class="file-cart-option row">
+              <div class="col-md-5 row">
+                <div class="col">
+                  <img src="{% static 'files/profile-pic.png' %}" alt="" />
+                  <img src="{% static 'files/profile-pic.png' %}" alt="" />
+                </div>
+              </div>
+              <div class="col-md-5 text-right">
+                <i class="bx bx-comment-dots"></i>12 Comments
+              </div>
+              <div class="col"><i class="bx bx-file"></i>0 files</div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="dismissed-col col">
+      <div class="p-4 file-column mt-4 rounded bx-shad">
+        <p class="title">
+          <i class="crime-history bx bxs-circle"></i> Dismissed
+          <span class="bg-secondary ml-2 px-1 rounded-circle text-white"
+            >4</span
+          >
+        </p>
+        <div class="s-line"></div>
+
+        <div class="content file-cart bg-white py-3 px-3 rounded">
+          <a href="">
+            <div class="status">
+              <p class="d-inline px-2 py-1 rounded">Investigating</p>
+            </div>
+            <div class="title py-2">
+              <h6>Attacked by neighbour</h6>
+            </div>
+            <div class="file-cart-desc">
+              <p>
+                I was attacked by a neighbour. He is really aggressive towards
+                me regards a simple issue....
+              </p>
+            </div>
+            <div class="file-cart-option row">
+              <div class="col-md-5 row">
+                <div class="col">
+                  <img src="{% static 'files/profile-pic.png' %}" alt="" />
+                  <img src="{% static 'files/profile-pic.png' %}" alt="" />
+                </div>
+              </div>
+              <div class="col-md-5 text-right">
+                <i class="bx bx-comment-dots"></i>12 Comments
+              </div>
+              <div class="col"><i class="bx bx-file"></i>0 files</div>
+            </div>
+          </a>
+        </div>
+        <div class="content file-cart bg-white py-3 px-3 rounded">
+          <a href="">
+            <div class="status">
+              <p class="d-inline px-2 py-1 rounded">Investigating</p>
+            </div>
+            <div class="title py-2">
+              <h6>Attacked by neighbour</h6>
+            </div>
+            <div class="file-cart-desc">
+              <p>
+                I was attacked by a neighbour. He is really aggressive towards
+                me regards a simple issue....
+              </p>
+            </div>
+            <div class="file-cart-option row">
+              <div class="col-md-5 row">
+                <div class="col">
+                  <img src="{% static 'files/profile-pic.png' %}" alt="" />
+                  <img src="{% static 'files/profile-pic.png' %}" alt="" />
+                </div>
+              </div>
+              <div class="col-md-5 text-right">
+                <i class="bx bx-comment-dots"></i>12 Comments
+              </div>
+              <div class="col"><i class="bx bx-file"></i>0 files</div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 {% endblock %}
