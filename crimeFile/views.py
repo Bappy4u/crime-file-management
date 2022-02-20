@@ -15,3 +15,12 @@ def FileHistoryView(request):
         return render(request, "file-history.html", context)
     return redirect('/login')
 
+def addFileView(request):
+    if request.user.is_authenticated:
+        if request.method == 'POST':
+            pass
+        else:
+            return render(request, 'add-file.html')
+
+
+
