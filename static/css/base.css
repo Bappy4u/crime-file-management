@@ -96,6 +96,7 @@ a.top-profile-btn img {
   max-width: 50px;
   border-radius: 50%;
   border: 1px solid rebeccapurple;
+  padding: 2px;
 }
 .top-search-form {
   max-width: 500px;

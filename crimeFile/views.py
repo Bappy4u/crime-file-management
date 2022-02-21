@@ -18,9 +18,20 @@ def FileHistoryView(request):
 def addFileView(request):
     if request.user.is_authenticated:
         if request.method == 'POST':
-            pass
+            user = request.user
+            title = request.POST['title']
+            victim = request.POST['victim']
+            suspect = request.POST['suspect']
+            description = request.POST['description']
+            phone = request.POST['phone']
+            type = request.POST['type']
+            todo = Complain.objects.create(title=title, user=user, criminal=suspect,victim=victim,phone=phone, description=description,type=type)
+            todo.save()
+            return redirect('fileHistoryView')
+
+           
         else:
             return render(request, 'add-file.html')
-
+    return redirect('/login')
 
 

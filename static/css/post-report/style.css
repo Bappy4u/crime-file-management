@@ -1,0 +1,17 @@
+body .body-content form {
+  margin: 30px 0;
+}
+
+body .body-content form .form-row .form-group:not(:first-child) {
+  margin-left: 20px;
+}
+
+body .body-content form .form-row .form-group {
+  margin: 15px 0;
+}
+
+body .body-content form .form-row .form-group textarea,
+body .body-content form .form-row .form-group input {
+  font-size: 14px;
+}
+/*# sourceMappingURL=style.css.map */
