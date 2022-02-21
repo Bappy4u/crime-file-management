@@ -1,0 +1,87 @@
+{% extends "base.html" %} {% load static %} {% block css %}
+<link rel="stylesheet" href="{% static 'css/single-file/style.css' %}" />
+{% endblock %} {% block main %}
+<div class="card m-5">
+  <h5 class="text-center card-header text-light bg-secondary">
+    {{ file.status|capfirst }}
+  </h5>
+  <div class="card-body m-4">
+    <br />
+    <h5 class="card-title">{{ file.title|capfirst }}</h5>
+    <br />
+    <hr />
+    <br />
+    <h6>Victim:</h6>
+    <p class="card-text">{{ file.victim|capfirst }}</p>
+    <br />
+    <hr />
+    <br />
+    <h6>Suspects:</h6>
+    <p class="card-text">{{ file.criminal|capfirst }}</p>
+
+    <br />
+    <br />
+    <hr />
+    <br />
+    <p class="card-text">{{ file.description|capfirst }}</p>
+
+    <br />
+
+    <div class="container">
+      <div class="row bootstrap snippets bootdeys">
+        <div class="col-md-8 col-sm-12">
+          <div class="comment-wrapper">
+            <div class="panel panel-info">
+              <hr />
+              <div class="panel-heading">Comments</div>
+              <hr />
+              <br />
+              <div class="panel-body">
+                <ul class="media-list">
+                  <li class="media">
+                    <a href="#" class="pull-left">
+                      <img
+                        src="https://bootdey.com/img/Content/user_1.jpg"
+                        alt=""
+                        class="img-circle"
+                      />
+                    </a>
+                    <div class="media-body">
+                      <span class="text-muted float-right">
+                        <small class="text-muted">30 min ago</small>
+                      </span>
+                      <strong class="text-success"
+                        >@MartinoMont
+                        <small
+                          class="user-title bg-secondary text-light p-1 rounded ml-1"
+                          >Inspector</small
+                        ></strong
+                      >
+                      <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Lorem ipsum dolor sit amet,
+                        <a href="#">#consecteturadipiscing </a>.
+                      </p>
+                    </div>
+                  </li>
+                </ul>
+                <div class="clearfix"></div>
+
+                <textarea
+                  class="form-control"
+                  placeholder="write a comment..."
+                  rows="3"
+                ></textarea>
+                <br />
+                <button type="button" class="btn btn-info pull-right">
+                  Post
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

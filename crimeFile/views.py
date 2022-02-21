@@ -1,4 +1,4 @@
-from django.http import HttpResponse
+from django.http import Http404
 from django.shortcuts import redirect, render
 from .models import Complain
 
@@ -32,6 +32,22 @@ def addFileView(request):
            
         else:
             return render(request, 'add-file.html')
+    return redirect('/login')
+
+
+def singleFileView(request, id):
+    if request.user.is_authenticated:
+        try:
+            file = Complain.objects.get(pk=id)
+        except Complain.DoesNotExist:
+            raise Http404("File does not exist")
+        
+        context = {
+            'file': file
+        }
+
+        return render(request, 'single-file.html', context)
+ 
     return redirect('/login')
 
 

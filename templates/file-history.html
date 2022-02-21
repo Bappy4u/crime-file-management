@@ -1,6 +1,7 @@
-{% extends "base.html" %} {% block main %} {% load static %} {% block css %}
+{% extends "base.html" %} {% load static %} {% block css %}
 <link rel="stylesheet" href="{% static 'css/file-history/style.css' %}" />
-{% endblock %}
+{% endblock %}{% block main %}
+
 <div class="page-title">
   <h2>File History</h2>
 </div>
@@ -29,7 +30,7 @@
         <div class="hello">
           {% for complain in investigating_complain_list %}
           <div class="content file-cart bg-white py-3 px-3 rounded">
-            <a href="">
+            <a href="{% url 'singleFileView' id=complain.id %}">
               <div class="status">
                 <p class="d-inline px-2 py-1 rounded">
                   {{ complain.status|capfirst }}
@@ -75,7 +76,7 @@
         <div class="hello">
           {% for complain in pending_complain_list %}
           <div class="content file-cart bg-white py-3 px-3 rounded">
-            <a href="">
+            <a href="{% url 'singleFileView' id=complain.id %}">
               <div class="status">
                 <p class="d-inline px-2 py-1 rounded">
                   {{ complain.status|capfirst }}
@@ -121,7 +122,7 @@
         <div class="hello">
           {% for complain in dismissed_complain_list %}
           <div class="content file-cart bg-white py-3 px-3 rounded">
-            <a href="">
+            <a href="{% url 'singleFileView' id=complain.id %}">
               <div class="status">
                 <p class="d-inline px-2 py-1 rounded">
                   {{ complain.status|capfirst }}
