@@ -57,6 +57,13 @@ a:focus {
 .top-profile-btn {
   cursor: pointer;
 }
+.top-profile-btn i:active {
+  transition: all 0.2s;
+}
+
+.top-profile-btn i:active {
+  transform: translateY(2px);
+}
 .nav-link .name {
   margin: 0;
   margin-left: 18px;
