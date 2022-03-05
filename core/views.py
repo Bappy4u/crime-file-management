@@ -23,3 +23,13 @@ def logoutView(request):
     
     return redirect('loginView')
 
+
+def signupView(request):
+    if request.user.is_authenticated:
+        return redirect('/crime-file')
+    if request.method == 'POST':
+        username = request.POST['username']
+        password = request.POST['password']
+        
+    return render(request, 'signup.html')
+
