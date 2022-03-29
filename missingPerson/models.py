@@ -9,4 +9,5 @@ class MissingPerson(models.Model):
     village = models.CharField(max_length=255)
     city = models.CharField(max_length=255, null=False)
     date = models.DateTimeField()
+    birthDate = models.DateTimeField()
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.PROTECT)
