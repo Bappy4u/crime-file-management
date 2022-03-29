@@ -1,0 +1,30 @@
+{% extends "base.html" %} {% block css %} {% load static %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}" />
+{% endblock %} {% block main %}
+<div id="main-wrapper" class="container">
+  <div class="row">
+    <div class="col-md-3">
+      <a href="">
+        <div class="card" style="width: 18rem">
+          <img
+            class="card-img-top"
+            src="{% static 'files/missing-profile.jpeg' %}"
+            alt="Card image cap"
+          />
+          <div class="card-body">
+            <h3 class="card-text">Md. Firoz</h3>
+            <div class="row person-basic-info" style="font-size: 14px">
+              <div class="col-5">25 years old</div>
+              <div class="col-7">
+                <i class="bx bx-map"></i>Mohammadpur, Dhaka
+              </div>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <!-- Row -->
+  </div>
+  {% endblock %}
+</div>
