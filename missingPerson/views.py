@@ -1,4 +1,10 @@
 from django.shortcuts import render
+from .models import MissingPerson
 
 def missingPerson(request):
-    return render(request, 'missing-person.html')
+    missingPersons = MissingPerson.objects.all()
+    context = {
+        "missingPersons": missingPersons,
+    }
+    
+    return render(request, 'missing-person.html', context)
