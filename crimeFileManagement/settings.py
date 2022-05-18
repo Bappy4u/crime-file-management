@@ -39,7 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'crimeFile',
     'missingPerson',
+    'forum',
     'core',
+    
 
 ]
 
