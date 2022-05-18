@@ -6,41 +6,58 @@
 </div>
 <div class="submission-form row">
   <div class="col-md-10">
-    <form method="post">
+    <form method="post" enctype="multipart/form-data">
       {% csrf_token %}
       <div class="form-row gx-5">
-        <div class="form-group col-md-4">
-          <label for="inputfortitle">Short Title</label>
-          <textarea
+        <div class="form-group col-md-3">
+          <label for="inputforname">Name</label>
+          <input
+            name="name"
+            id="inputforname"
             type="text"
-            class="form-control"
-            id="inputfortitle"
-            placeholder="Short Description. Example: Arif is attacked by someone"
-            name="title"
+            placeholder="e.g. Rahim"
             required
-          ></textarea>
+          />
         </div>
         <div class="form-group col-md-3">
-          <label for="victimsInfo">Victim's Information</label>
-          <textarea
+          <label for="inputforstreet">Street</label>
+          <input
+            name="street"
+            id="inputforstreet"
             type="text"
-            class="form-control"
-            id="victimsInfo"
-            placeholder="Example: Arif Hossain. 23 Years old."
-            name="victim"
+            placeholder="e.g. 123 progroti lane"
             required
-          ></textarea>
+          />
         </div>
         <div class="form-group col-md-3">
-          <label for="inputcriminal">Suspects</label>
-          <textarea
+          <label for="inputforvillage">village</label>
+          <input
+            name="village"
+            id="inputforvillage"
             type="text"
-            class="form-control"
-            id="inputcriminal"
-            placeholder="Name: Firoz. 23 years old"
-            name="suspect"
+            placeholder="e.g. Aganagar"
             required
-          ></textarea>
+          />
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-3">
+          <label for="inputforcity">City</label>
+          <input
+            name="city"
+            id="inputforcity"
+            type="text"
+            placeholder="e.g. Dhaka"
+            required
+          />
+        </div>
+        <div class="form-group col-md-3">
+          <label for="inputfordate">Missing From</label>
+          <input type="datetime-local" id="inputfordate" name="date" required />
+        </div>
+        <div class="form-group col-md-3">
+          <label for="photo">Photo</label>
+          <input type="file" id="photo" name="photo" accept="image/*" />
         </div>
       </div>
       <div class="form-row">
@@ -50,33 +67,22 @@
             type="text"
             class="form-control"
             id="inputfordescription"
-            placeholder="Describe in detail..."
+            placeholder="Example: Arif Hossain. 23 Years old."
             name="description"
             required
           ></textarea>
         </div>
-      </div>
-      <div class="form-row">
-        <div class="form-group">
-          <label for="inputphone">Contact Number</label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputphone"
-            placeholder="01********"
-            name="phone"
-            required
-          />
+
+        <div class="form-group col-md-3">
+          <label for="contact">Phone</label>
+          <input type="number" id="contact" name="phone" required />
         </div>
-        <div class="form-group col-md-2">
-          <label for="inputState">Report Type</label>
-          <select id="inputState" class="form-control" name="type" required>
-            <option value="">None</option>
-            <option value="GD">GD</option>
-            <option value="CF">CASE FILE</option>
-          </select>
+        <div class="form-group col-md-3">
+          <label for="inputforbdate">Birth Date</label>
+          <input type="date" id="inputforbdate" name="bdate" required />
         </div>
       </div>
+      <div class="form-row"></div>
       <div class="form-row">
         <button type="submit" class="btn btn-secondary">Submit</button>
       </div>
