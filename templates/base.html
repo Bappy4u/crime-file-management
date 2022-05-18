@@ -77,28 +77,11 @@
               </li>
             </ul>
           </li>
+
           <li>
-            <a
-              data-toggle="collapse"
-              aria-expanded="false"
-              class="dropdown-toggle"
-              href="{% url 'missingPerson' %}"
-              ><i class="bx bx-user-minus"></i> Missing Person </a>
-              <ul class="collapse list-unstyled" id="homeSubmenu">
-              <li>
-                <a href="#">Home 1</a>
-              </li>
-              <li>
-                <a href="#">Home 2</a>
-              </li>
-              <li>
-                <a href="#">Home 3</a>
-              </li>
-            </ul>
-            </a>
-          </li>
-          <li>
-            <a href="#"><i class="bx bx-search-alt"></i> Wanted Person</a>
+            <a href="{% url 'wantedPerson' %}"
+              ><i class="bx bx-search-alt"></i> Wanted Person</a
+            >
           </li>
           <li>
             <a href="#"><i class="bx bx-message-square-dots"></i> Forum</a>

@@ -24,6 +24,7 @@ urlpatterns = [
     path('crime-file/', include('crimeFile.urls')),
     path('', include('core.urls')),
     path('missing-person/', include('missingPerson.urls')),
+    path('wanted-person/', include('wantedPerson.urls')),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
