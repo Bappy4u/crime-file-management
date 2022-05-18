@@ -1,0 +1,31 @@
+{% extends "base.html" %} {% block css %} {% load static %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}" />
+{% endblock %} {% block main %}
+<div id="main-wrapper" class="container missing-page">
+  <div class="row">
+    {% if announcements %}
+    <div>
+      {% for notice in announcements %}
+      <a href="#">
+        <div class="card">
+          <div class="card-header">{{ notice.title }}</div>
+          <div class="card-body">
+            <blockquote class="blockquote mb-0">
+              <p class="text-muted">{{ notice.noticeId }}</p>
+              <p>{{notice.description | slice:":150"}}...</p>
+              <footer class="blockquote-footer">{{notice.authority}}</footer>
+            </blockquote>
+          </div>
+          <div class="card-footer text-muted">{{notice.date}}</div>
+        </div>
+      </a>
+      {% endfor %} {% else %}
+      <div>
+        <h2>No person in the list</h2>
+      </div>
+      {% endif %}
+    </div>
+    <!-- Row -->
+    {% endblock %}
+  </div>
+</div>

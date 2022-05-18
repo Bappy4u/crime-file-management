@@ -1,4 +1,5 @@
 from django.db import models
+from django.conf import settings
 
 # Create your models here.
 class wantedPerson(models.Model):
@@ -9,6 +10,7 @@ class wantedPerson(models.Model):
         (STATUS_ARRESTED, 'Arrested'),
         (STATUS_WANTED, 'Wanted')
     ]
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.PROTECT)
     name = models.CharField(max_length=255)
     address = models.CharField(max_length=255)
     fathersName = models.CharField(max_length=255)
