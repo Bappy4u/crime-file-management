@@ -1,0 +1,87 @@
+{% extends "base.html" %} {% load static %} {% block css %}
+<link rel="stylesheet" href="{% static 'css/post-report/style.css' %}" />
+{% endblock %} {% block main %}
+<div class="page-title">
+  <h2>Submit a Report</h2>
+</div>
+<div class="submission-form row">
+  <div class="col-md-10">
+    <form method="post">
+      {% csrf_token %}
+      <div class="form-row gx-5">
+        <div class="form-group col-md-4">
+          <label for="inputfortitle">Short Title</label>
+          <textarea
+            type="text"
+            class="form-control"
+            id="inputfortitle"
+            placeholder="Short Description. Example: Arif is attacked by someone"
+            name="title"
+            required
+          ></textarea>
+        </div>
+        <div class="form-group col-md-3">
+          <label for="victimsInfo">Victim's Information</label>
+          <textarea
+            type="text"
+            class="form-control"
+            id="victimsInfo"
+            placeholder="Example: Arif Hossain. 23 Years old."
+            name="victim"
+            required
+          ></textarea>
+        </div>
+        <div class="form-group col-md-3">
+          <label for="inputcriminal">Suspects</label>
+          <textarea
+            type="text"
+            class="form-control"
+            id="inputcriminal"
+            placeholder="Name: Firoz. 23 years old"
+            name="suspect"
+            required
+          ></textarea>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="inputfordescription">Description</label>
+          <textarea
+            type="text"
+            class="form-control"
+            id="inputfordescription"
+            placeholder="Describe in detail..."
+            name="description"
+            required
+          ></textarea>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="inputphone">Contact Number</label>
+          <input
+            type="text"
+            class="form-control"
+            id="inputphone"
+            placeholder="01********"
+            name="phone"
+            required
+          />
+        </div>
+        <div class="form-group col-md-2">
+          <label for="inputState">Report Type</label>
+          <select id="inputState" class="form-control" name="type" required>
+            <option value="">None</option>
+            <option value="GD">GD</option>
+            <option value="CF">CASE FILE</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-row">
+        <button type="submit" class="btn btn-secondary">Submit</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+{% endblock %}

@@ -8,3 +8,7 @@ def missingPerson(request):
     }
     
     return render(request, 'missing-person.html', context)
+
+
+def addMissingPerson(request):
+    return render(request, 'add-missing-person.html')

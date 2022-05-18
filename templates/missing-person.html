@@ -2,6 +2,9 @@
 <link rel="stylesheet" href="{% static 'css/style.css' %}" />
 {% endblock %} {% block main %}
 <div id="main-wrapper" class="container missing-page">
+  <div class="row m-3">
+    <a href="{% url 'addMissing' %}" class="btn btn-primary">Anyone Missing?</a>
+  </div>
   <div class="row">
     {% if missingPersons %}
     <div>
@@ -11,7 +14,7 @@
           <div class="card" style="width: 18rem">
             <img
               class="card-img-top"
-              src="{% static 'files/missing-profile.jpeg' %}"
+              src="{{ person.photo.url }}"
               alt="Card image cap"
             />
             <div class="status">{{person.status}}</div>
