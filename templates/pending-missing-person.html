@@ -1,0 +1,52 @@
+{% extends "base.html" %} {% block css %} {% load static %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}" />
+{% endblock %} {% block main %}
+<div id="main-wrapper" class="container missing-page">
+  <div class="row m-3">
+    <a href="{% url 'addMissing' %}" class="btn btn-primary">Anyone Missing?</a>
+  </div>
+  <div class="row">
+    {% if missingPersons %}
+    <div>
+      {% for person in missingPersons %}
+      <div class="col-md-3 person">
+        <a href="">
+          <div class="card" style="width: 18rem">
+            <img
+              class="card-img-top"
+              src="{{ person.photo.url }}"
+              alt="Card image cap"
+            />
+            <div class="status">{{person.status}}</div>
+            <div class="card-body">
+              <h3 class="card-text">{{ person.name }}</h3>
+              <div class="row person-basic-info" style="font-size: 14px">
+                <div class="col-5">
+                  {% if person.birthdate|timesince|wordcount > 2 %}
+                  <span
+                    >{{ person.birthDate|timesince|truncatewords:2|slice:":-3"
+                    }}
+                  </span>
+
+                  {% else %}
+                  <span> {{ person.birthDate|timesince}} </span>
+                  {% endif %}
+                </div>
+                <div class="col-7">
+                  <i class="bx bx-map"></i>{{person.village}}, {{ person.city }}
+                </div>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+    {% endfor %} {% else %}
+    <div>
+      <h2>No person in the list</h2>
+    </div>
+    {% endif %}
+  </div>
+  <!-- Row -->
+  {% endblock %}
+</div>

@@ -57,10 +57,45 @@
           <li class="active">
             <a href="#"><i class="bx bx-user-voice"></i> Announcement</a>
           </li>
-          <li>
-            <a href="{% url 'missingPerson' %}"
+          <li class="active">
+            <a
+              href="#missing-person-menu"
+              data-toggle="collapse"
+              aria-expanded="false"
+              class="dropdown-toggle"
               ><i class="bx bx-user-minus"></i> Missing Person</a
             >
+            <ul class="collapse list-unstyled" id="missing-person-menu">
+              <li>
+                <a href="{% url 'missingPerson' %}">Missing Persons</a>
+              </li>
+              <li>
+                <a href="{% url 'pendingMissingPerson' %}">Pending</a>
+              </li>
+              <li>
+                <a href="{% url 'addMissing' %}">Anyone Missing?</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a
+              data-toggle="collapse"
+              aria-expanded="false"
+              class="dropdown-toggle"
+              href="{% url 'missingPerson' %}"
+              ><i class="bx bx-user-minus"></i> Missing Person </a>
+              <ul class="collapse list-unstyled" id="homeSubmenu">
+              <li>
+                <a href="#">Home 1</a>
+              </li>
+              <li>
+                <a href="#">Home 2</a>
+              </li>
+              <li>
+                <a href="#">Home 3</a>
+              </li>
+            </ul>
+            </a>
           </li>
           <li>
             <a href="#"><i class="bx bx-search-alt"></i> Wanted Person</a>

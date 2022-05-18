@@ -2,12 +2,23 @@ from django.shortcuts import render, redirect
 from .models import MissingPerson
 
 def missingPerson(request):
-    missingPersons = MissingPerson.objects.all()
+    missingPersons = MissingPerson.objects.all().filter(status="MISSING")
     context = {
         "missingPersons": missingPersons,
     }
     
     return render(request, 'missing-person.html', context)
+
+
+
+
+def pendingMissingPerson(request):
+    missingPersons = MissingPerson.objects.all().filter(status="PENDING")
+    context = {
+        "missingPersons": missingPersons,
+    }
+    
+    return render(request, 'pending-missing-person.html', context)
 
 
 def addMissingPerson(request):
