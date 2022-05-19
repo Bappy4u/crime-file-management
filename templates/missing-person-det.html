@@ -3,27 +3,38 @@
 {% endblock %} {% block main %}
 <div class="card m-5">
   <h5 class="text-center card-header text-light bg-secondary">
-    {{ file.status|capfirst }}
+    {{ person.status|capfirst }}
   </h5>
   <div class="card-body m-4">
     <br />
-    <h5 class="card-title">{{ file.title|capfirst }}</h5>
+    <div class="row">
+      <div class="col-md-7">
+        <h5 class="card-title">{{ person.name|capfirst }}</h5>
+      </div>
+      <div class="col-md-5"><img src="{{person.photo.url}}" alt="" /></div>
+    </div>
+
     <br />
     <hr />
     <br />
-    <h6>Victim:</h6>
-    <p class="card-text">{{ file.victim|capfirst }}</p>
+    <h6>Missing since:</h6>
+    <p class="card-text">{{ person.date| date }}</p>
     <br />
     <hr />
     <br />
-    <h6>Suspects:</h6>
-    <p class="card-text">{{ file.criminal|capfirst }}</p>
+    <h6>Birth Date:</h6>
+    <p class="card-text">{{ person.birthDate|capfirst }}</p>
+    <br />
+    <hr />
+    <br />
+    <h6>Contact:</h6>
+    <p class="card-text">{{ person.contact|capfirst }}</p>
 
     <br />
     <br />
     <hr />
     <br />
-    <p class="card-text">{{ file.description|capfirst }}</p>
+    <p class="card-text">{{ person.description|capfirst }}</p>
 
     <br />
 

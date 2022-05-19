@@ -1,3 +1,4 @@
+from django.http import Http404
 from django.shortcuts import render, redirect
 from .models import MissingPerson
 
@@ -42,4 +43,12 @@ def addMissingPerson(request):
 
 
 def missingPersonDet(request, id):
-    return render(request, 'missing-person-det.html')
+    try:
+        person = MissingPerson.objects.get(pk=id)
+    except MissingPerson.DoesNotExist:
+        raise Http404("File does not exist")
+        
+    context = {
+        'person': person
+    }
+    return render(request, 'missing-person-det.html', context)
