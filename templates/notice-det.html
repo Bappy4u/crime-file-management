@@ -2,28 +2,26 @@
 <link rel="stylesheet" href="{% static 'css/single-file/style.css' %}" />
 {% endblock %} {% block main %}
 <div class="card m-5">
-  <h5 class="text-center card-header text-light bg-secondary">
-    {{ file.status|capfirst }}
+  <h5 class="card-header text-light bg-secondary">
+    {{ file.noticeId|capfirst }}
   </h5>
   <div class="card-body m-4">
     <br />
-    <h5 class="card-title">{{ file.title|capfirst }}</h5>
+    <img src="{{file.image.url}}" alt="" />
     <br />
     <hr />
     <br />
-    <h6>Victim:</h6>
-    <p class="card-text">{{ file.victim|capfirst }}</p>
+    <h6>Notice:</h6>
+    <p class="card-text">{{ file.description|capfirst }}</p>
     <br />
     <hr />
     <br />
-    <h6>Suspects:</h6>
-    <p class="card-text">{{ file.criminal|capfirst }}</p>
+    <h6>By order of</h6>
+    <p class="card-text">{{ file.authority|capfirst }}</p>
 
     <br />
     <br />
     <hr />
-    <br />
-    <p class="card-text">{{ file.description|capfirst }}</p>
 
     <br />
 
