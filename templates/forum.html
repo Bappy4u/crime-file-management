@@ -1,0 +1,29 @@
+{% extends "base.html" %} {% block css %} {% load static %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}" />
+{% endblock %} {% block main %}
+<div id="main-wrapper" class="container missing-page">
+  <div class="row">
+    {% if posts %}
+    <div>
+      {% for post in posts %}
+      <a href="#">
+        <div class="card" style="width: 18rem">
+          <img src="{{ post.image.url }}" class="card-img-top" alt="..." />
+          <div class="card-body">
+            <p style="color: #5030e5; font-size: 14px; margin: 0">
+              {{post.category.title}}
+            </p>
+            <p class="card-text">{{post.title | slice:":50"}}</p>
+          </div>
+        </div>
+      </a>
+      {% endfor %} {% else %}
+      <div>
+        <h2>No post in the forum</h2>
+      </div>
+      {% endif %}
+    </div>
+    <!-- Row -->
+    {% endblock %}
+  </div>
+</div>

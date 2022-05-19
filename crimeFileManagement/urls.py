@@ -26,6 +26,7 @@ urlpatterns = [
     path('missing-person/', include('missingPerson.urls')),
     path('announcement/', include('announcement.urls')),
     path('wanted-person/', include('wantedPerson.urls')),
+    path('forum/', include('forum.urls')),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
