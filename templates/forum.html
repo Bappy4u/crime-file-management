@@ -6,7 +6,7 @@
     {% if posts %}
     <div>
       {% for post in posts %}
-      <a href="#">
+      <a href="{% url 'postView' id=post.id %}">
         <div class="card" style="width: 18rem">
           <img src="{{ post.image.url }}" class="card-img-top" alt="..." />
           <div class="card-body">
