@@ -19,6 +19,9 @@ from django.conf.urls.static import static
 from django.conf import settings
 from django.urls import path, include
 
+admin.site.site_header = "Crime File Management Authority Dashboard"
+admin.site.index_title = "Dashboard"
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('crime-file/', include('crimeFile.urls')),
