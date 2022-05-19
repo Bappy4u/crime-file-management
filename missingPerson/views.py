@@ -38,3 +38,8 @@ def addMissingPerson(request):
             person.save()
             return redirect('missingPerson')
     return render(request, 'add-missing-person.html')
+
+
+
+def missingPersonDet(request, id):
+    return render(request, 'missing-person-det.html')

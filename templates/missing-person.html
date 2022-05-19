@@ -10,7 +10,7 @@
     <div>
       {% for person in missingPersons %}
       <div class="col-md-3 person">
-        <a href="">
+        <a href="{% url 'missingPersonDet' id=person.id %}">
           <div class="card" style="width: 18rem">
             <img
               class="card-img-top"

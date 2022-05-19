@@ -6,7 +6,7 @@
     {% if announcements %}
     <div>
       {% for notice in announcements %}
-      <a href="#">
+      <a href="{% url 'singleNoticeView' id=notice.id %}">
         <div class="card">
           <div class="card-header">{{ notice.title }}</div>
           <div class="card-body">

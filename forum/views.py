@@ -9,3 +9,8 @@ def forumView(request):
         'posts': posts
     }
     return render(request, 'forum.html', context)
+
+
+def postView(request):
+
+    return render(request, 'post.html')
