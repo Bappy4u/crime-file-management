@@ -225,7 +225,11 @@
                     aria-expanded="false"
                   >
                     <div class="col-md-4">
+                      {% if request.user.photo %}
+                      <img src="{{ request.user.photo.url }}" alt="" />
+                      {% else %}
                       <img src="{% static 'files/profile-pic.png' %}" alt="" />
+                      {% endif %}
                     </div>
                     <div class="col-md-2">
                       <i class="bx bx-chevron-down"></i>

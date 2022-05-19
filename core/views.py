@@ -34,6 +34,7 @@ def signupView(request):
         lastName = request.POST['lastName']
         nid = request.POST['nid']
         email = request.POST['email']
+        photo = request.FILES.get('photo')
         context = {}
         got_error = False
         if User.objects.get(email=email):
@@ -51,7 +52,7 @@ def signupView(request):
         if got_error:
             context['got_error'] = True
             return render(request, 'signup.html', context)
-        user = User.objects.create_user(username=username,password=password,first_name=firstName,last_name=lastName,email=email,nid=nid)
+        user = User.objects.create_user(username=username,password=password,first_name=firstName,last_name=lastName,email=email,nid=nid, photo=photo)
         login(request, user)
         return redirect('fileHistoryView')
     return render(request, 'signup.html')

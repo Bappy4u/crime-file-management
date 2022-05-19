@@ -100,10 +100,13 @@ a.top-profile-btn {
   color: #787486;
 }
 a.top-profile-btn img {
-  max-width: 50px;
   border-radius: 50%;
   border: 1px solid rebeccapurple;
   padding: 2px;
+  height: 3rem;
+  width: 3rem;
+  object-fit: cover;
+  border-radius: 50%;
 }
 .top-search-form {
   max-width: 500px;
